@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -10,7 +11,7 @@ using OpenQA.Selenium.Firefox;
 
 namespace IntegrationTesting
 {
-    public class Test
+    public class LoginTest
     {
         public IWebDriver driver;
 
@@ -21,15 +22,17 @@ namespace IntegrationTesting
         }
 
         [Test]
-        public void TestMethod()
+        public void LoginMethod()
         {
             driver.Url = "https://www.esheba.cnsbd.com/#/login";
+            Thread.Sleep(2000);
             IWebElement element = driver.FindElement(By.Id("email"));
             element.SendKeys("ulfatnawshin@gmail.com");
-
+            Thread.Sleep(1000);
             IWebElement password = driver.FindElement(By.Id("password"));
-            password.SendKeys("naw7shin");
-            //driver.FindElement(By.ClassName("btn btn-primary")).Click();
+            password.SendKeys("1234567");
+
+            Thread.Sleep(2000);
             driver.FindElement(By.XPath("/html/body/div/section/div/div/div/div/div[2]/div/form/div[4]/div/button")).Click();
 
             String at = driver.Title;
