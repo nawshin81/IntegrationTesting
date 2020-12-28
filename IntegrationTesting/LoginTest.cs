@@ -31,12 +31,9 @@ namespace IntegrationTesting
             Thread.Sleep(1000);
             IWebElement password = driver.FindElement(By.Id("password"));
             password.SendKeys("1234567");
-
             Thread.Sleep(2000);
-            driver.FindElement(By.XPath("/html/body/div/section/div/div/div/div/div[2]/div/form/div[4]/div/button")).Click();
 
             String at = driver.Title;
-
             String et = "Bangladesh Railway";
 
             if (at == et)
@@ -44,7 +41,6 @@ namespace IntegrationTesting
                 Console.WriteLine("test successful");
                 IWebElement element2 = driver.FindElement(By.XPath("/html/body/div/section/div/div/div/div/div[2]/div[2]/form/div[4]/div/button"));
                 element2.Click();
-
             }
             else
             {
