@@ -1,2 +1,2 @@
 # IntegrationTesting
-Testing a website with Selenium Webdrive and ChromeDriver.
+Testing a website with Selenium Webdriver, ChromeDriver and NUnit.
