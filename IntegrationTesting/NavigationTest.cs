@@ -24,19 +24,21 @@ namespace IntegrationTesting
         public void NavigationTestMethod()
         {
             driver.Url = "https://www.esheba.cnsbd.com/#/";
-            Thread.Sleep(2000);
-            driver.Url = "https://www.esheba.cnsbd.com/#/register";
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
+            driver.Navigate().GoToUrl("https://www.esheba.cnsbd.com/#/register");
+            //driver.Url = "https://www.esheba.cnsbd.com/#/register";
+            Thread.Sleep(1000);
             IWebElement element = driver.FindElement(By.Id("name"));
             element.SendKeys("nawshin");
-            Thread.Sleep(1500);
+            Thread.Sleep(1000);
+            driver.Navigate().GoToUrl("https://www.esheba.cnsbd.com/#/contact");
             driver.Navigate().Refresh();
-            Thread.Sleep(1500);
+            Thread.Sleep(1000);
             driver.Navigate().Back();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
 
             driver.Navigate().Forward();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
         }
 
         public void Back()
